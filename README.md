@@ -2,6 +2,10 @@
 
 This bot (formerly known as Argus) is an alternative to Watchbot. If you want to use it, you will have to host it yourself (Instructions below). This code is now public due to me not having the time to maintain the bot, but if you want you can host this yourself and make it a public bot. If you are using this code, I kindly ask that you include a link or note somewhere in your project crediting this repository.
 
+### Bot showcase
+
+If you are running a watchbot alternative, message me on Discord (@kartoffelchipss) or any other platform, so I cann add it to this list
+
 ### Installation
 
 1. Install dependencies
