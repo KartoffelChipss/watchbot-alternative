@@ -1,0 +1,198 @@
+#support-1 {
+    padding-top: 130px;
+    padding-bottom: 30px;
+
+    h2 {
+        margin: 0;
+        font-size: 47px;
+    }
+
+    p {
+        margin: 30px 0;
+        font-size: 18px;
+        color: var(--light-grey)
+    }
+
+    @media screen and (max-width: 800px) {
+        padding-top: 100px;
+        padding-bottom: 25px;
+
+        h2 {
+            font-size: 40px;
+        }
+    }
+
+    @media screen and (max-width: 580px) {
+        padding-top: 25px;
+    }
+
+    .btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        //margin-top: 15px;
+
+        a {
+            background-color: var(--grey-3);
+            padding: 14px 20px;
+            font-size: 19px;
+            color: var(--white-1);
+            text-decoration: none;
+            border-radius: 7px;
+            margin: 0px 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 20px;
+                width: 20px;
+                margin-right: 5px;
+            }
+
+            transition: filter .2s ease-in-out;
+
+            &:hover {
+                filter: brightness(83%);
+            }
+
+            &.main {
+                background-color: var(--blue-1);
+            }
+        }
+
+        @media screen and (max-width: 650px) {
+            width: 100%;
+            justify-content: left;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 100%;
+            align-items: start;
+            flex-direction: column;
+
+            a {
+                margin: 0;
+            }
+
+            a:first-of-type {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.table-wrapper {
+    width: calc(100% - 15px * 2);
+    overflow: auto;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+#support-2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+table {
+    border-spacing: 15px 3px;
+    table-layout: fixed;
+    min-width: 700px;
+    width: 100%;
+
+    th {
+        height: 40px;
+
+        &:first-of-type {
+            background-color: rgba(255,255,255, 5%);
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        &:last-of-type {
+            background-color: rgba(255,255,255, 10%);
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        &:nth-of-type(2) {
+            background-color: rgba(255,255,255, 5%);
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+    }
+    
+    td {
+        &:first-of-type {
+            text-align: center;
+            background-color: rgba(255,255,255, 5%);
+        }
+        
+        &:nth-of-type(2) {
+            background-color: rgba(255,255,255, 5%);
+        }
+
+        &:last-of-type {
+            background-color: rgba(255,255,255, 10%);
+        }
+
+        svg {
+            height: 28px;
+            width: 28px;
+        }
+
+        // &:last-of-type {
+        //     color: var(--blue-1);
+        //     font-weight: 700;
+            
+        //     svg {
+        //         fill: var(--blue-1);
+        //         stroke-width: 0.0008;
+        //         height: 23px;
+        //         width: 23px;
+        //     }
+        // }
+
+        height: 40px;
+        padding: 0;
+        width: 30%;
+
+        &.red {
+            color: var(--danger);
+
+            svg {
+                fill: var(--danger);
+                path {
+                    stroke: var(--danger);
+                }
+            }
+        }
+
+        &.green {
+            color: var(--success);
+
+            svg {
+                fill: var(--success);
+            }
+        }
+
+        &.green-check svg {
+            height: 40px;
+            width: 40px;
+            path {
+                stroke: var(--success);
+            }
+        }
+        
+        font-weight: 600;
+        text-align: center;
+    }
+
+    tr:last-of-type td {
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "name": "watchbot-alternative",
+    "version": "1.0.0",
+    "description": "Watch the Bots on your Discord Server to get notified when they go offline",
+    "main": "argus.js",
+    "scripts": {
+        "start": "node ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KartoffelChipss/watchbot-alternative.git"
+    },
+    "keywords": ["discord", "discord bot", "watchbot", "argus"],
+    "license": "GNU General Public License v3.0",
+    "author": {
+        "name": "Jan Straßburger",
+        "email": "contact@strassburger.org",
+        "url": "https://strassburger.org/"
+      },
+    "bugs": {
+        "url": "https://github.com/KartoffelChipss/watchbot-alternative/issues"
+    },
+    "homepage": "https://github.com/KartoffelChipss/watchbot-alternative#readme",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "chalk": "^2.4.2",
+        "discord.js": "^14.12.1",
+        "dotenv": "^16.3.1",
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "express-rate-limit": "^6.11.0",
+        "express-session": "^1.17.3",
+        "fs": "^0.0.1-security",
+        "memorystore": "^1.6.7",
+        "mongoose": "^7.4.2",
+        "nodemailer": "^6.9.4",
+        "passport": "^0.6.0",
+        "passport-discord": "^0.1.4",
+        "path": "^0.12.7",
+        "string-width": "^4.2.2",
+        "url": "^0.11.1"
+    }
+}

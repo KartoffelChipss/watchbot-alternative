@@ -1,0 +1,122 @@
+#makePromoCodeForm {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        margin-top: 20px;
+        background-color: var(--blue-1);
+        border: none;
+        color: var(--white-1);
+        font-weight: 600;
+        font-size: 20px;
+        padding: 7px 14px;
+        border-radius: 7px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.section {
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+
+        a {
+            background-color: var(--blue-1);
+            color: var(--white-1);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 7px;
+        }
+    }
+
+    .bottom {
+        table {
+            border-spacing: 15px 3px;
+            table-layout: fixed;
+            width: 100%;
+
+            th {
+                height: 40px;
+
+                background-color: rgba(0,0,0, 15%);
+                border-top-left-radius: 7px;
+                border-top-right-radius: 7px;
+            }
+            
+            td {
+                background-color: rgba(0,0,0, 10%);
+                text-align: center;
+
+                svg {
+                    height: 28px;
+                    width: 28px;
+                }
+
+                // &:last-of-type {
+                //     color: var(--blue-1);
+                //     font-weight: 700;
+                    
+                //     svg {
+                //         fill: var(--blue-1);
+                //         stroke-width: 0.0008;
+                //         height: 23px;
+                //         width: 23px;
+                //     }
+                // }
+
+                height: 40px;
+                padding: 0;
+                font-size: 16px;
+
+                &:first-of-type {
+                    font-size: 12px;
+                }
+
+                &.red {
+                    color: var(--danger);
+
+                    svg {
+                        fill: var(--danger);
+                        path {
+                            stroke: var(--danger);
+                        }
+                    }
+                }
+
+                &.green {
+                    color: var(--success);
+
+                    svg {
+                        fill: var(--success);
+                    }
+                }
+
+                &.green-check svg {
+                    height: 40px;
+                    width: 40px;
+                    path {
+                        stroke: var(--success);
+                    }
+                }
+                
+                font-weight: 600;
+                text-align: center;
+            }
+
+            tr:last-of-type td {
+                border-bottom-left-radius: 7px;
+                border-bottom-right-radius: 7px;
+            }
+        }
+    }
+}

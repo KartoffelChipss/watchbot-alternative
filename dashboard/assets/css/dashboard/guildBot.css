@@ -1,0 +1,151 @@
+@import url("./main.css");
+.top {
+  margin-top: 30px;
+}
+.top .path {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+.top .path a {
+  color: var(--white-1);
+  text-decoration: none;
+  margin-right: 5px;
+  font-weight: 500;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.top .path .arrow {
+  margin-right: 5px;
+}
+.top .path a, .top .path .arrow {
+  font-size: 17px;
+  color: var(--light-grey);
+}
+@media screen and (max-width: 580px) {
+  .top .path a, .top .path .arrow {
+    font-size: 13px;
+    color: var(--light-grey);
+  }
+}
+
+main .featurelist {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .featurelist .feature {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 7px;
+  max-width: 440px;
+  flex-grow: 1;
+  margin: 10px;
+  color: var(--white-1);
+  text-decoration: none;
+  transition: scale 0.2s ease-in-out;
+}
+main .featurelist .feature h5 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: var(--blue-1);
+}
+main .featurelist .feature p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+}
+main .featurelist .feature svg {
+  --hw: 45px;
+  width: var(--hw);
+  height: var(--hw);
+  margin-right: 15px;
+  min-width: var(--hw);
+  max-width: var(--hw);
+}
+main .featurelist .feature div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .featurelist .feature:hover {
+  cursor: pointer;
+}
+main .featurelist .feature:active {
+  scale: 0.97;
+}
+@media screen and (max-width: 1000px) {
+  main .featurelist .feature {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+main .botsettings {
+  margin-top: 50px;
+}
+main .botsettings .settingsBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 7px;
+  flex-grow: 1;
+  margin: 10px;
+  color: var(--white-1);
+  text-decoration: none;
+}
+@media screen and (max-width: 500px) {
+  main .botsettings .settingsBox {
+    flex-direction: column;
+    align-items: start;
+  }
+  main .botsettings .settingsBox select {
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+main .botsettings .settingsBox .left {
+  display: flex;
+  align-items: center;
+}
+main .botsettings .settingsBox svg {
+  --hw: 45px;
+  width: var(--hw);
+  height: var(--hw);
+  margin-right: 15px;
+  min-width: var(--hw);
+  max-width: var(--hw);
+}
+main .botsettings .settingsBox h5 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 22px;
+  color: var(--blue-1);
+}
+main .botsettings .settingsBox p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+}
+main .botsettings .settingsBox select {
+  background-color: var(--grey-1);
+  color: var(--white-1);
+  font-size: 17px;
+  padding: 7px;
+  border-radius: 7px;
+  border: none;
+  accent-color: var(--blue-1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+main .botsettings .settingsBox select option {
+  color: var(--white-2);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}/*# sourceMappingURL=guildBot.css.map */

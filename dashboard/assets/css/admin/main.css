@@ -1,0 +1,31 @@
+main.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+main.main a {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin: 15px;
+  width: 170px;
+  height: 120px;
+}
+main.main a svg {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 10px;
+}
+main.main a span {
+  color: var(--white-1);
+  text-decoration: none;
+  font-size: 22px;
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */

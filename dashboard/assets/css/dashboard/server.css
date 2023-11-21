@@ -1,0 +1,74 @@
+@import url("./main.css");
+.top {
+  margin-top: 30px;
+}
+.top .path {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 10px;
+}
+.top .path a {
+  color: var(--white-1);
+  text-decoration: none;
+  margin-right: 5px;
+  font-weight: 500;
+}
+.top .path .arrow {
+  margin-right: 5px;
+}
+.top .path a, .top .path .arrow {
+  font-size: 17px;
+  color: var(--light-grey);
+}
+
+main .botlist {
+  display: flex;
+  flex-direction: column;
+}
+main .botlist .bot-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 20px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease-in-out;
+}
+main .botlist .bot-card:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+main .botlist .bot-card .left {
+  display: flex;
+  align-items: center;
+}
+main .botlist .bot-card .left img {
+  height: 50px;
+  width: auto;
+  border-radius: 100%;
+  margin-right: 15px;
+  background-color: transparent;
+}
+main .botlist .bot-card a {
+  color: var(--white-1);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 7px;
+  width: 120px;
+  font-size: 18px;
+}
+main .botlist .bot-card a svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 7px;
+}
+main .botlist .bot-card a.settings {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+main .botlist .bot-card a.invite {
+  background-color: var(--blue-1);
+}/*# sourceMappingURL=server.css.map */

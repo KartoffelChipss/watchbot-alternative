@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        <%= botMember.user.username %> - Argus Dashboard
+    </title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Wactch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+        <meta property="og:title" content="Argus - Watch your bot">
+        <meta property="og:site_name" content="Argus Dashboard">
+        <meta property="og:url" content="https://argus-bot.com/">
+        <meta property="og:description" content="Argus - Watch Discord bots on your server.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+        <link href="/assets/css/dashboard/feature.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loader"></div>
+
+    <%- include("../partials/messageBox.ejs", {}) %>
+
+    <%- include("../partials/nav.ejs", { user: user }) %>
+
+        <main>
+            <div class="top">
+                <span class="path">
+                    <a href="/dashboard">Dashboard</a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>">
+                        <%= guild.name %>
+                    </a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>">
+                        <%= botMember.user.username %>
+                    </a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>/dm">E-Mail</a>
+                </span>
+                <h2>E-Mail Notifications</h2>
+            </div>
+
+            <div class="main">
+                <div class="section">
+                    <h3>
+                        <svg fill="var(--blue-1)" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M 28.0117 27.3672 C 33.0508 27.3672 37.3867 22.8672 37.3867 17.0078 C 37.3867 11.2187 33.0274 6.9297 28.0117 6.9297 C 22.9961 6.9297 18.6367 11.3125 18.6367 17.0547 C 18.6367 22.8672 22.9961 27.3672 28.0117 27.3672 Z M 13.2930 49.0703 L 42.7305 49.0703 C 46.4101 49.0703 47.7226 48.0156 47.7226 45.9531 C 47.7226 39.9062 40.1523 31.5625 28.0117 31.5625 C 15.8477 31.5625 8.2774 39.9062 8.2774 45.9531 C 8.2774 48.0156 9.5898 49.0703 13.2930 49.0703 Z"></path></g></svg>
+                        Add user
+                    </h3>
+                    <p>Add an E-Mail adress, that recieves a notification, when your bot goes online or offline</p>
+                    <div class="btn-input-sec">
+                        <input type="email" placeholder="E-Mail adress" id="emailAdress" onkeydown="if(event.key === 'Enter') addEmail('<%= guild.id %>', '<%= botMember.user.id %>')">
+                        <button style="padding: 10px 18px;" type="button" onclick="addEmail('<%= guild.id %>', '<%= botMember.user.id %>')">Add</button>
+                    </div>
+                </div>
+
+                <% if (userDoc.vipuntil < new Date().getTime() && botDoc.mailList.length >= 5) {%>
+                    <div class="recommendPremium" style="margin-top: 30px; background-color: rgba(0,0,0, 10%);">
+                        <img src="/assets/img/premium_small.png">
+                        <span>Want to add more E-Mail Adresses? Consider <a href="/managepremium">subscribing to Argus Premium</a></span>
+                    </div>
+                <%}%>
+
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>E-Mail</th>
+                            <th>Confirmation</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <% if (botDoc.mailList.length > 0) { %>
+                            <% botDoc.mailList.forEach((mailEntry, index) => { %>
+                                <tr id="user-row-<%= encodeURIComponent(mailEntry.mail) %>">
+                                    <td data-label="E-Mail"><%= mailEntry.mail %></td>
+                                    <% if (mailEntry.activationCode === "none") {%><td data-label="Confirmation" class="activated">Confirmed</td><%} else {%><td data-label="Confirmation" class="deactivated">Not confirmed</td><%}%>
+                                    <td><button type="button" class="rmvBtn" onclick="removeEmail('<%= guild.id %>', '<%= botMember.user.id %>', '<%= mailEntry.mail %>')">Remove</button></td>
+                                </tr>
+                            <%});%>
+                        <% } %>
+                    </tbody>
+                </table>
+
+                <!-- <div class="section">
+                    <button type="button" class="save">Save</button>
+                </div> -->
+            </div>
+        </main>
+
+        <%- include("../partials/footer.ejs", {}) %>
+
+        <script src="/assets/js/assets.js"></script>
+        <script src="/assets/js/mailUpdate.js"></script>
+</body>
+
+</html>

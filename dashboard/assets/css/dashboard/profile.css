@@ -1,0 +1,262 @@
+.profileBox {
+  --padding: 15px;
+  width: calc(100% - var(--padding) * 2);
+  padding: var(--padding);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+.profileBox:last-of-type {
+  margin-bottom: 0px;
+}
+.profileBox .top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.profileBox .top h2 {
+  margin: 0;
+  font-size: 28px;
+  margin-bottom: 2px;
+}
+.profileBox .top img {
+  height: 70px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 100%;
+}
+.profileBox .top .username {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  font-size: 15px;
+}
+.profileBox .subBox {
+  --padding: 15px;
+  width: calc(100% - var(--padding) * 2);
+  padding: var(--padding);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.profileBox .badges {
+  display: flex;
+  align-items: center;
+}
+.profileBox .badges .badge {
+  height: 27px;
+  width: 27px;
+  margin-right: 0;
+  margin: 0 5px;
+}
+.profileBox .badges .badge img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 500px) {
+  .profileBox .badges {
+    flex-direction: column;
+    align-items: start;
+  }
+  .profileBox .badges .badge {
+    margin: 5px 0;
+  }
+  .profileBox .badges .badge .tooltiptext {
+    display: none;
+  }
+}
+.profileBox img {
+  position: relative;
+}
+.profileBox .greyImg {
+  position: relative;
+}
+.profileBox .greyImg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-mask: url("/assets/img/shield_mask.png");
+          mask: url("/assets/img/shield_mask.png");
+  -webkit-mask-position: 0;
+          mask-position: 0;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+.profileBox .premium {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  margin-left: 15px;
+}
+.profileBox .premium h3 {
+  margin: 0;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.profileBox .premium .statusbox {
+  display: flex;
+  align-items: center;
+}
+.profileBox .premium .statusbox svg {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+}
+.profileBox .premium .statusbox span {
+  font-size: 20px;
+  color: var(--white-1);
+}
+.profileBox .premium .statusbox.success span {
+  color: var(--success);
+}
+.profileBox .premium .statusbox.success svg g, .profileBox .premium .statusbox.success svg path {
+  stroke: var(--success);
+}
+.profileBox .premium .statusbox.success svg {
+  fill: var(--success);
+  stroke: var(--success);
+}
+.profileBox .premium .statusbox.danger span {
+  color: var(--danger);
+}
+.profileBox .premium .statusbox.danger svg g, .profileBox .premium .statusbox.danger svg path {
+  stroke: var(--danger);
+}
+.profileBox .premium .statusbox.danger svg {
+  fill: var(--danger);
+  stroke: var(--danger);
+}
+.profileBox .manageSubscriptionBtn {
+  color: var(--white-1);
+  text-decoration: none;
+  background-color: var(--grey-3);
+  padding: 12px 18px;
+  font-size: 18px;
+  border-radius: 7px;
+  transition: filter 0.2s ease-in-out;
+}
+@media screen and (max-width: 690px) {
+  .profileBox .manageSubscriptionBtn {
+    display: none;
+  }
+}
+.profileBox .manageSubscriptionBtn:hover {
+  filter: brightness(83%);
+}
+.profileBox .manageSubscriptionBtn.subscribe {
+  background-color: var(--blue-1);
+}
+.profileBox .manageSubscriptionBtn.subscribe:hover {
+  background-color: var(--blue-2);
+}
+.profileBox .roles {
+  display: flex;
+  flex-direction: column;
+}
+.profileBox .roles .role {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.profileBox .roles .role img {
+  height: 30px;
+  width: auto;
+  margin-right: 7px;
+}
+.profileBox .bank h3 {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+.profileBox .bank h4 {
+  margin: 0;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.profileBox .bank .money {
+  display: flex;
+  align-items: center;
+}
+.profileBox .bank .money img {
+  height: 25px;
+  width: auto;
+  margin-right: 8px;
+}
+.profileBox .bank .getPointsBox {
+  --height: 47px;
+  position: relative;
+  --padding: 0px;
+  width: calc(100% - var(--padding) * 2);
+  padding: var(--padding) 0;
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--height);
+  margin-top: 10px;
+}
+.profileBox .bank .getPointsBox .left {
+  background-color: rgba(0, 0, 0, 0.15);
+  position: relative;
+  height: var(--height);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.profileBox .bank .getPointsBox .left span:nth-of-type(2) {
+  margin-right: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.profileBox .bank .getPointsBox button {
+  font-size: 18px;
+  height: var(--height);
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-1);
+  background-color: var(--blue-1);
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-weight: 500;
+  transition: scale 0.15s ease-in-out;
+  margin: 0;
+  scale: 1;
+}
+.profileBox .bank .getPointsBox button svg {
+  width: 20px;
+  height: 20px;
+  scale: 1.1;
+}
+.profileBox .bank .getPointsBox button:hover {
+  cursor: pointer;
+}
+.profileBox .bank .getPointsBox.done button {
+  background-color: var(--blue-2);
+}
+.profileBox .bank .getPointsBox.done .left span:nth-of-type(2) {
+  filter: brightness(60%);
+}
+
+.pointsImg {
+  height: 25px;
+  width: auto;
+  vertical-align: bottom;
+  translate: 0px 1.5px;
+}/*# sourceMappingURL=profile.css.map */

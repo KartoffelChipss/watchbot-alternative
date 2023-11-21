@@ -1,0 +1,72 @@
+@import url("../assets.css");
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  --padding: 15px;
+  width: calc(100% - var(--padding) * 2);
+  padding: var(--padding);
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+main .section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+}
+main h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+main .server-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 20px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease-in-out;
+}
+main .server-card:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+main .server-card .left {
+  display: flex;
+  align-items: center;
+}
+main .server-card .left img {
+  height: 50px;
+  width: auto;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+main .server-card a {
+  color: var(--white-1);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 7px;
+  width: 120px;
+  font-size: 18px;
+}
+main .server-card a svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 7px;
+}
+main .server-card a.settings {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+main .server-card a.invite {
+  background-color: var(--blue-1);
+}/*# sourceMappingURL=main.css.map */

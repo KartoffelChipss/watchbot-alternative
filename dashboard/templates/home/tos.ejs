@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms of Service - Argus</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Watch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Terms of Service - Argus">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Watch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/home/main.css" rel="stylesheet">
+    <link href="/assets/css/home/legal.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <nav>
+        <a class="left" href="/">
+            <img src="/assets/img/logo.png">
+            <h1>Argus</h1>
+        </a>
+        <div class="right">
+            <a href="/support">Support</a>
+            <a href="/premium">Premium</a>
+            <a href="/vote">Vote</a>
+            <% if (user) {%>
+                <a href="/dashboard" class="loginbtn">Dashboard</a>
+            <%} else {%>
+                <a href="/dashboard" class="loginbtn">Login</a>
+            <%}%>
+        </div>
+    </nav>
+
+    <div class="section" id="terms">
+        <h1>Terms of Service</h1>
+        <h2>Usage Agreement</h2>
+        <p>By inviting the bot and using its features are you agreeing to the below mentioned Terms and Privacy Policy of the bot.</p>
+        <p>You acknowledge that you have the priviledge to use the bot freely on any Discord Server (Server) you share with it, that you can invite it to any Server that you have "Manage Server" rights for and that this priviledge might get revoked for you, if you're subject of breaking the terms and/or policy of this bot, or the <a href="https://discord.com/terms">Terms of Service</a>, <a href="https://discord.com/privacy">Privacy Policy</a> and/or <a href="https://discord.com/guidelines">Community Guidelines</a> of Discord Inc.</p>
+        <p>Through Inviting the bot may it collect specific data as described in its <a href="/privacy">Privacy Policy</a>.</p>
+        <h2>Intended age</h2>
+        <p>The use of the Bot is not permitted for minors under the age of 13, or under the age of legal consent for their country. This is in compliance with the Discord Terms of Service.</p>
+        <h2>Liability</h2>
+        <p>The owner of the bot may not be made liable for individuals breaking these Terms at any given time. He has faith in the end users being truthfull about their information and not missusing this bot or The Services of Discord Inc in a malicious way.</p>
+        <p>We reserve the right to update these terms at our own discretion, giving you a 1-Week (7 days) period to opt out of these terms if you're not agreeing with the new changes. You may opt out by Removing the bot from any Server you have the rights for.</p>
+        <h2>Contact</h2>
+        <p>People may get in contact through the <a href="https://discord.com/invite/Cc76tYwXvy">KartoffelChips Development</a> guild.</p>
+    </div>
+
+    <%- include("../partials/homeFooter.ejs", {}) %>
+
+    <script src="/assets/js/assets.js"></script>
+</body>
+</html>

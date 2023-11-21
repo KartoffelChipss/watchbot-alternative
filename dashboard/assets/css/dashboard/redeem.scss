@@ -1,0 +1,102 @@
+.redeemBox {
+    --padding: 15px;
+    width: calc(100% - var(--padding) * 2);
+    padding: var(--padding);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(0,0,0, 15%);
+    margin-bottom: 30px;
+
+    &.main {
+        background-image: url("/assets/img/gift_bg.png");
+        background-size: 50px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    svg {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        text-align: center;
+        min-width: 0px;
+        border-radius: 0;
+        letter-spacing: 5px;
+        padding: 7px 0;
+        letter-spacing: 10px;
+        text-align: center;
+        border-radius: 7px;
+        max-width: 100%;
+        width: 400px;
+
+        margin-bottom: 15px;
+    }
+
+    button {
+        border: none;
+        color: var(--white-1);
+        text-decoration: none;
+        background-color: var(--blue-1);
+        padding: 8px 15px;
+        font-size: 18px;
+        border-radius: 7px;
+        transition: filter .2s ease-in-out;
+        font-weight: 600;
+
+        &:hover {
+            filter: brightness(83%);
+            cursor: pointer;
+        }
+
+        &.subscribe {
+            background-color: var(--blue-1);
+
+            &:hover {
+                background-color: var(--blue-2);
+            }
+        }
+    }
+}
+
+.redeemList {
+    display: flex;
+    flex-wrap: wrap;
+
+    .redeemBox {
+        margin: 10px;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            height: 35px;
+            width: 35px;
+            margin-bottom: 10px;
+        }
+
+        span {
+            font-size: 20px;
+            color: var(--white-1);
+        }
+
+        span.date {
+            font-size: 16px;
+            margin-top: 10px;
+            color:  var(--light-grey);
+        }
+
+        span.code {
+            margin-top: 10px;
+            font-size: 20px;
+            letter-spacing: 5px;
+            color: var(--white-1);
+        }
+    }
+}

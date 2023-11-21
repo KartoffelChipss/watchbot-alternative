@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Verify DM - Argus Dashboard</title>
+        <meta name="author" content="KartoffelChips">
+        <meta name="description" content="Argus - Wactch Discord bots on your server.">
+        <%- include("../partials/icons.ejs") %>
+    
+        <meta property="og:title" content="Argus - Watch your bot">
+        <meta property="og:site_name" content="Verify DM">
+        <meta property="og:url" content="https://argus-bot.com/">
+        <meta property="og:description" content="Argus - Wactch Discord bots on your server.">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/assets/img/ogimage.jpg">
+    
+        <link href="/assets/css/dashboard/verifyStyles.css" rel="stylesheet">
+    </head>
+<body class="verifyBody">
+    
+    <div class="title">
+        <img src="/assets/img/logo.png">
+        <h1>Argus</h1>
+    </div>
+
+    <div class="msgBox <%= role %>">
+        <span><%= msg %></span>
+    </div>
+
+    <%- include("../partials/footer.ejs", {}) %>
+</body>
+</html>

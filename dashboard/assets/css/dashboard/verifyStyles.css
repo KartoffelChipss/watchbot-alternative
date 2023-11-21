@@ -1,0 +1,43 @@
+@import url("../assets.css");
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.title img {
+  height: 80px;
+  width: auto;
+  margin-right: 10px;
+}
+.title h1 {
+  margin: 0;
+  font-size: 60px;
+}
+
+.msgBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+}
+.msgBox span {
+  text-align: center;
+  font-size: 25px;
+}
+.msgBox.success {
+  background-color: var(--success);
+  border: solid 5px #1c6e3d;
+}
+.msgBox.danger {
+  background-color: var(--danger);
+  border: solid 5px #9e3c4d;
+}/*# sourceMappingURL=verifyStyles.css.map */

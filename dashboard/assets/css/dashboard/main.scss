@@ -1,0 +1,84 @@
+@import url("../assets.css");
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    --padding: 15px;
+    width: calc(100% - var(--padding) * 2);
+    padding: var(--padding);
+    max-width: 1000px;
+
+    display: flex;
+    flex-direction: column;
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .server-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 7px 20px;
+        border-radius: 7px;
+        margin-bottom: 15px;
+        background-color: rgba(0, 0, 0, 10%);
+        transition: background .2s ease-in-out;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 6%);
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+
+            img {
+                height: 50px;
+                width: auto;
+                border-radius: 100%;
+                margin-right: 15px;
+            }
+        }
+
+        a {
+            color: var(--white-1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 7px;
+            width: 120px;
+            font-size: 18px;
+
+            svg {
+                width: 22px;
+                height: 22px;
+                margin-right: 7px;
+            }
+
+            &.settings {
+                background-color: rgba(0, 0, 0, 20%);
+            }
+
+            &.invite {
+                background-color: var(--blue-1);
+            }
+        }
+    }
+}

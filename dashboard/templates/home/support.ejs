@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Support - Argus</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Watch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Support - Argus">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Watch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/home/main.css" rel="stylesheet">
+    <link href="/assets/css/home/support.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <nav>
+        <a class="left" href="/">
+            <img src="/assets/img/logo.png">
+            <h1>Argus</h1>
+        </a>
+        <div class="right">
+            <a href="/support">Support</a>
+            <a href="/premium">Premium</a>
+            <a href="/vote">Vote</a>
+            <% if (user) {%>
+                <a href="/dashboard" class="loginbtn">Dashboard</a>
+            <%} else {%>
+                <a href="/dashboard" class="loginbtn">Login</a>
+            <%}%>
+        </div>
+    </nav>
+
+    <div class="section" id="support-1">
+        <h2>Argus <span style="color: var(--blue-1);">Support</span> Center</h2>
+        <p>Recieve fast and reliable Support using one of the Methods listed below</p>
+    </div>
+
+    <div class="section" id="support-2">
+        <a class="box" href="/discord" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/logo-discord.png">
+            <span class="title">Discord</span>
+            <span class="desc">Open a ticket on our Discord or ask others</span>
+        </a>
+
+        <a class="box" href="/twitter" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/img/logo-twitter.png">
+            <span class="title">X</span>
+            <span class="desc">Send us a DM on Twitter about your problem!</span>
+        </a>
+
+        <a class="box" href="mailto:argus@strassburger.org">
+            <svg fill="#fefefe" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g data-name="Layer 2" id="Layer_2"> <path d="M28,24.5H10a2,2,0,0,1-2-2V9.5a2,2,0,0,1,2-2H28a2,2,0,0,1,2,2v13A2,2,0,0,1,28,24.5ZM10,9.5v13H28V9.5Z"></path> <path d="M19,17.5a1,1,0,0,1-.53-.15l-8-5a1,1,0,1,1,1.06-1.7L19,15.32l7.47-4.67a1,1,0,1,1,1.06,1.7l-8,5A1,1,0,0,1,19,17.5Z"></path> <path d="M6,17H3a1,1,0,0,1,0-2H6a1,1,0,1,1,0,2Z"></path> <path d="M6,11H3A1,1,0,0,1,3,9H6a1,1,0,0,1,0,2Z"></path> <path d="M6,23H3a1,1,0,0,1,0-2H6a1,1,0,0,1,0,2Z"></path> </g> </g></svg>
+            <span class="title">E-Mail</span>
+            <span class="desc">Contact us via good old E-Mail</span>
+        </a>
+    </div>
+
+    <%- include("../partials/homeFooter.ejs", {}) %>
+
+    <script src="/assets/js/assets.js"></script>
+</body>
+</html>

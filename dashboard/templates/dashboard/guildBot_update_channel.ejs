@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= botMember.user.username %> - Argus Dashboard</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Wactch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Argus Dashboard">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Wactch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/dashboard/feature.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <%- include("../partials/messageBox.ejs", {}) %>
+
+    <%- include("../partials/nav.ejs", { user: user }) %>
+
+        <main>
+            <div class="top">
+                <span class="path">
+                    <a href="/dashboard">Dashboard</a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>">
+                        <%= guild.name %>
+                    </a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>">
+                        <%= botMember.user.username %>
+                    </a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>/channel">Channel</a>
+                </span>
+                <h2>Channel Notifications</h2>
+            </div>
+
+            <form class="main" method="POST" name="channelForm" id="channelForm">
+                <div class="section">
+                    <h3>
+                        <svg style="margin-right: 5px; height: 30px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 19L11 5M13 19L17 5M19 9H6.5M17.5 15H5" stroke="var(--blue-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        Channel
+                    </h3>
+                    <p>Select the channel, where a message should be sent when <%= botMember.user.username %> goes online or offline.</p>
+
+                    <select form="channelForm" name="pingRole" id="pingRole" oninput="setChannel('<%= guild.id %>', '<%= botMember.user.id %>', this)">
+                        <option value="none" disabled> - - - - - </option>
+                        <option value="none" <% if (botDoc.channelUpdate === "none") {%>selected<%}%>>None</option>
+                        <option value="none" disabled> - - - - - </option>
+                        <% channels.forEach((channel, index) => {%>
+                            <option <%if (channel.type === 4) {%>disabled<%}%> <%if (channel.type !== 4) {%>value="<%= channel.id %>"<%}%> <% if (botDoc.channelUpdate === channel.id) {%>selected<%}%>><%= channel.name %></option>
+                        <%});%>
+                    </select>
+                </div>
+                <div class="section">
+                    <h3>
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="var(--blue-1)" class="bi bi-people-fill" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path> <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"></path> <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path> </g></svg>
+                        Ping Role
+                    </h3>
+                    <p>Select a role, that should be pinged, when <%= botMember.user.username %> goes online or offline.</p>
+
+                    <select form="channelForm" name="pingRole" id="pingRole" oninput="setRole('<%= guild.id %>', '<%= botMember.user.id %>', this)">
+                        <option value="none" disabled> - - - - - </option>
+                        <option value="none" <% if (botDoc.channelMentionRole === "none") {%>selected<%}%>>None</option>
+                        <option value="none" disabled> - - - - - </option>
+                        <% roles.forEach((role, index) => {%>
+                            <option value="<%= role.id %>" <% if (botDoc.channelMentionRole === role.id) {%>selected<%}%> <% if (role.color !== 0) {%>style="color: #<%= role.color.toString(16) %>;"<%}%>><% if (role.name !== "@everyone") {%><%= role.name %><%} else {%><%= role.name %><%}%></option>
+                        <%});%>
+                    </select>
+                </div>
+            </form>
+        </main>
+
+        <%- include("../partials/footer.ejs", {}) %>
+
+        <script src="/assets/js/assets.js"></script>
+        <script src="/assets/js/channelupdate.js"></script>
+</body>
+</html>

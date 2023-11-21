@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-1: #2978E0;
+            --blue-2: #1F5BA8;
+        
+            --bg-color: #313338;
+            --grey-1: #1A1B1E;
+            --grey-2: #2B2D31;
+            --grey-25: #27282b;
+            --grey-3: #43444B;
+        
+            --light-grey: #B5BAC1;
+        
+            --white-1: #fefefe;
+            --white-2: #cecece;
+        
+            --success: #14A44D;
+            --success-2: #1c6e3d;
+            --warning: #E4A11B;
+            --warning-2: #a1761f;
+            --danger: #DC4C64;
+            --danger-2: #9e3c4d;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background-color: var(--grey-1);
+
+            color: var(--white-1);
+            font-size: 17px;
+            font-weight: 600;
+
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            color: var(--blue-1);
+        }
+
+        .top {
+            --padding: 15px;
+            padding: var(--padding);
+            width: calc(90% - var(--padding) * 2);
+            background-color: rgba(255,255,255, 5%);
+
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .top img {
+            height: 100px;
+        }
+
+        .bottom {
+            --padding: 30px;
+            padding: 15px var(--padding);
+            width: calc(90% - var(--padding) * 2);
+            background-color: rgba(255,255,255, 7%);
+
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <img src="https://file.strassburger.org/argus-banner.png" height="150px">
+    </div>
+    <div class="bottom">
+        <p>Hello <%= addMail.split("@")[0] %>,</p>
+
+        <p>Please confirm, that you want to recieve updates for the status of <b><%= botMember.user.username %></b> bot on <b><%= guild.name %></b>.<br>Click the link below, to confirm that you want to recieve E-Mails regarding the status of <%= botMember.user.username %>.</p>
+
+        <a href="https://argus-bot.com/dashboard/<%= guildId %>/<%= botId %>/verifymail?code=<%= activationCode %>">https://argus-bot.com/dashboard/<%= guildId %>/<%= botId %>/verifymail?code=<%= activationCode %></a>
+
+        <p>If you haven not requested this E-Mail, you can just ignore this message.</p>
+        <p>Greetings<br>Your Argus Team</p>
+    </div>
+</body>
+</html>

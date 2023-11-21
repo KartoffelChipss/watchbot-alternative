@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= botMember.user.username %> - Argus Dashboard</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Wactch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Argus Dashboard">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Watch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/dashboard/guildBot.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <%- include("../partials/messageBox.ejs", {}) %>
+
+    <%- include("../partials/nav.ejs", { user: user }) %>
+
+    <main>
+        <div class="top">
+            <span class="path">
+                <a href="/dashboard">Dashboard</a> 
+                <span class="arrow">></span> 
+                <a href="/dashboard/<%= guild.id %>"><%= guild.name %></a>
+                <span class="arrow">></span>
+                <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>"><%= botMember.user.username %></a>
+            </span>
+            <h2><%= botMember.user.username %></h2>
+        </div>
+
+        <div class="featurelist">
+            <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>/channel" class="feature">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 4L7 20M17 4L14 20M5 8H20M4 16H19" stroke="#fefefe" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+                <div>
+                    <h5>Channel Updates</h5>
+                    <p>Get updates regarding your bot status sent to a specific channel in your discord server.</p>
+                </div>
+            </a>
+
+            <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>/dm" class="feature">
+                <svg fill="#fefefe" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-paper-plane"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M16.907 4.44l-7.655 7.655c.227.325.42.676.575 1.048l1.91 4.599 5.17-13.303zm-9.002 6.308l7.656-7.656-13.303 5.17 4.599 1.911a5.51 5.51 0 0 1 1.048.575zm11.618-7.862l-6.027 15.506c-.38.98-1.477 1.483-2.449 1.124a1.831 1.831 0 0 1-1.057-1.017L8.08 13.9a3.662 3.662 0 0 0-1.98-1.98l-4.6-1.91C.546 9.613.11 8.51.528 7.544a1.95 1.95 0 0 1 1.08-1.04L17.114.475a1.852 1.852 0 0 1 2.41 2.41z"></path></g></svg>
+                <div>
+                    <h5>DM Updates</h5>
+                    <p>Get updates sent directly to you on Discord.</p>
+                </div>
+            </a>
+
+            <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>/mail" class="feature">
+                <svg fill="#fefefe" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g data-name="Layer 2" id="Layer_2"> <path d="M28,24.5H10a2,2,0,0,1-2-2V9.5a2,2,0,0,1,2-2H28a2,2,0,0,1,2,2v13A2,2,0,0,1,28,24.5ZM10,9.5v13H28V9.5Z"></path> <path d="M19,17.5a1,1,0,0,1-.53-.15l-8-5a1,1,0,1,1,1.06-1.7L19,15.32l7.47-4.67a1,1,0,1,1,1.06,1.7l-8,5A1,1,0,0,1,19,17.5Z"></path> <path d="M6,17H3a1,1,0,0,1,0-2H6a1,1,0,1,1,0,2Z"></path> <path d="M6,11H3A1,1,0,0,1,3,9H6a1,1,0,0,1,0,2Z"></path> <path d="M6,23H3a1,1,0,0,1,0-2H6a1,1,0,0,1,0,2Z"></path> </g> </g></svg>
+                <div>
+                    <h5>E-Mail Updates</h5>
+                    <p>Get E-Mail notifications, when your bot goes offline.</p>
+                </div>
+            </a>
+
+            <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>/embed" class="feature">
+                <svg fill="#fefefe" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" d="M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z M12,21 C16.9705627,21 21,16.9705627 21,12 C21,7.02943725 16.9705627,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 Z M9.70710678,15.2928932 L8.29289322,16.7071068 L3.58578644,12 L8.29289322,7.29289322 L9.70710678,8.70710678 L6.41421356,12 L9.70710678,15.2928932 Z M14.2928932,8.70710678 L15.7071068,7.29289322 L20.4142136,12 L15.7071068,16.7071068 L14.2928932,15.2928932 L17.5857864,12 L14.2928932,8.70710678 Z M11.9863939,18.164399 L10.0136061,17.835601 L12.0136061,5.83560101 L13.9863939,6.16439899 L11.9863939,18.164399 Z"></path> </g></svg>
+                <div>
+                    <h5>Embed Updates</h5>
+                    <p>An embed containing your bot status, that is being updated every 5 minutes.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="botsettings">
+            <h2>Settings</h2>
+            <div class="settingsBox">
+                <div class="left">
+                    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#fefefe" fill-rule="evenodd" d="M3 10a7 7 0 1114 0 7 7 0 01-14 0zm7-9a9 9 0 100 18 9 9 0 000-18zm1 5a1 1 0 10-2 0v4.032l-2.64 2.2a1 1 0 101.28 1.536l3-2.5A1 1 0 0011 10.5V6z"></path> </g></svg>
+                    <div>
+                        <h5>Update Delay</h5>
+                        <p>Add a delay before a status change is announced.</p>
+                    </div>
+                </div>
+                <select id="updateDelayInput" oninput="updateDelay('<%= guild.id %>', '<%= botMember.user.id %>')">
+                    <option value="0" <%if (botDoc.updateDelay === 0) {%>selected<%}%>>None</option>
+                    <option value="60000" <%if (botDoc.updateDelay === 60000) {%>selected<%}%>>1 Minute</option>
+                    <option value="120000" <%if (botDoc.updateDelay === 120000) {%>selected<%}%>>2 Minutes</option>
+                    <option value="180000" <%if (botDoc.updateDelay === 180000) {%>selected<%}%>>3 Minutes</option>
+                    <option value="240000" <%if (botDoc.updateDelay === 240000) {%>selected<%}%>>4 Minutes</option>
+                    <option value="300000" <%if (botDoc.updateDelay === 300000) {%>selected<%}%>>5 Minutes</option>
+                    <option value="600000" <%if (botDoc.updateDelay === 600000) {%>selected<%}%>>10 Minutes</option>
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <%- include("../partials/footer.ejs", {}) %>
+
+    <script src="/assets/js/assets.js"></script>
+    <script src="/assets/js/guildBot.js"></script>
+</body>
+</html>

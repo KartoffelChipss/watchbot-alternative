@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Promo Codes - Argus Admin Dashboard</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Wactch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Promo Codes - Argus Admin Dashboard">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Wactch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/dashboard/main.css" rel="stylesheet">
+    <link href="/assets/css/admin/assets.css" rel="stylesheet">
+    <link href="/assets/css/admin/promo.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <%- include("../partials/messageBox.ejs", {}) %>
+
+    <%- include("../partials/adminNav.ejs", { user: user }) %>
+
+    <main>
+        <div class="section">
+            <div class="top">
+                <h2>Create Promo Code</h2>
+                <a href="/admin/promo/create">Create</a>
+            </div>
+
+            <div class="bottom">
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Expiring</th>
+                            <th>Max uses</th>
+                            <th>Used by</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <% if (promocodes.length > 0) { %>
+                            <% promocodes.forEach((codeEntry, index) => { %>
+                                <tr id="user-row-<%= encodeURIComponent(codeEntry.code) %>">
+                                    <td data-label="Code"><%= codeEntry.code %></td>
+                                    <td data-label="Type"><%= codeEntry.type %></td>
+                                    <td data-label="Amount"><%= codeEntry.amount %></td>
+                                    <td data-label="Expiring"><%= codeEntry.expiring %></td>
+                                    <td data-label="Max uses"><%= codeEntry.max_uses %></td>
+                                    <td data-label="Used by"><%= codeEntry.used_by.length %></td>
+                                </tr>
+                            <%});%>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <%- include("../partials/footer.ejs", {}) %>
+
+    <script src="/assets/js/assets.js"></script>
+</body>
+</html>

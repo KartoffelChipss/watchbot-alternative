@@ -1,0 +1,88 @@
+.redeemBox {
+  --padding: 15px;
+  width: calc(100% - var(--padding) * 2);
+  padding: var(--padding);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.redeemBox.main {
+  background-image: url("/assets/img/gift_bg.png");
+  background-size: 50px;
+}
+.redeemBox svg {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 10px;
+}
+.redeemBox input {
+  text-align: center;
+  min-width: 0px;
+  border-radius: 0;
+  letter-spacing: 5px;
+  padding: 7px 0;
+  letter-spacing: 10px;
+  text-align: center;
+  border-radius: 7px;
+  max-width: 100%;
+  width: 400px;
+  margin-bottom: 15px;
+}
+.redeemBox button {
+  border: none;
+  color: var(--white-1);
+  text-decoration: none;
+  background-color: var(--blue-1);
+  padding: 8px 15px;
+  font-size: 18px;
+  border-radius: 7px;
+  transition: filter 0.2s ease-in-out;
+  font-weight: 600;
+}
+.redeemBox button:hover {
+  filter: brightness(83%);
+  cursor: pointer;
+}
+.redeemBox button.subscribe {
+  background-color: var(--blue-1);
+}
+.redeemBox button.subscribe:hover {
+  background-color: var(--blue-2);
+}
+
+.redeemList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.redeemList .redeemBox {
+  margin: 10px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.redeemList .redeemBox img {
+  height: 35px;
+  width: 35px;
+  margin-bottom: 10px;
+}
+.redeemList .redeemBox span {
+  font-size: 20px;
+  color: var(--white-1);
+}
+.redeemList .redeemBox span.date {
+  font-size: 16px;
+  margin-top: 10px;
+  color: var(--light-grey);
+}
+.redeemList .redeemBox span.code {
+  margin-top: 10px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: var(--white-1);
+}/*# sourceMappingURL=redeem.css.map */

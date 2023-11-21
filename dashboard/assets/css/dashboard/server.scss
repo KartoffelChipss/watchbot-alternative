@@ -1,0 +1,89 @@
+@import url("./main.css");
+
+.top {
+    margin-top: 30px;
+
+    .path {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 10px;
+
+        a {
+            color: var(--white-1);
+            text-decoration: none;
+            margin-right: 5px;
+            font-weight: 500;
+        }
+
+        .arrow {
+            margin-right: 5px;
+        }
+
+        a, .arrow {
+            font-size: 17px;
+            color: var(--light-grey);
+        }
+    }
+}
+
+main {
+    .botlist {
+        display: flex;
+        flex-direction: column;
+
+        .bot-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 20px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            background-color: rgba(0, 0, 0, 10%);
+            transition: background .2s ease-in-out;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 6%);
+            }
+    
+            .left {
+                display: flex;
+                align-items: center;
+    
+                img {
+                    height: 50px;
+                    width: auto;
+                    border-radius: 100%;
+                    margin-right: 15px;
+                    background-color: transparent;
+                }
+            }
+    
+            a {
+                color: var(--white-1);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px;
+                border-radius: 7px;
+                width: 120px;
+                font-size: 18px;
+    
+                svg {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 7px;
+                }
+    
+                &.settings {
+                    background-color: rgba(0, 0, 0, 20%);
+                }
+    
+                &.invite {
+                    background-color: var(--blue-1);
+                }
+            }
+        }
+    }
+}

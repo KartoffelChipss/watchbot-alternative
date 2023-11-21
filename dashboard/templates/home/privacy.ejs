@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy Policy - Argus</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Watch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Privacy Policy - Argus">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Watch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/home/main.css" rel="stylesheet">
+    <link href="/assets/css/home/legal.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <nav>
+        <a class="left" href="/">
+            <img src="/assets/img/logo.png">
+            <h1>Argus</h1>
+        </a>
+        <div class="right">
+            <a href="/support">Support</a>
+            <a href="/premium">Premium</a>
+            <a href="/vote">Vote</a>
+            <% if (user) {%>
+                <a href="/dashboard" class="loginbtn">Dashboard</a>
+            <%} else {%>
+                <a href="/dashboard" class="loginbtn">Login</a>
+            <%}%>
+        </div>
+    </nav>
+
+    <div class="section" id="privacy">
+        <h1>Privacy Policy</h1>
+        <p>The use of this application ("Bot") in a server requires the collection of some specific user data ("Data"). The Data collected includes, but is not limited to Discord user ID values. Use of the Bot is considered an agreement to the terms of this Policy.</p>
+        <h2>Access to Data</h2>
+        <p>Access to Data is only permitted to Bot's developers, and only in the scope required for the development, testing, and implementation of features for Bot. Data is not sold, provided to, or shared with any third party, except where required by law or a Terms of Service agreement. You may view the data we store about you by asking in <a href="https://discord.com/channels/990295419005333554/990297017974665246" target="_blank" rel="noopener noreferrer">#❓︱support</a> in the <a href="https://discord.com/invite/Cc76tYwXvy">KartoffelChips Development</a> guild.</p>
+        <h2>Storage of Data</h2>
+        <p>Data is stored in a MongoDB database. The database is secured to prevent external access, however no guarantee is provided and the Bot owners assume no liability for the unintentional or malicious breach of Data. In the event of an unauthorised Data access, users will be notified through the Discord client application.</p>
+        <h2>User Rights</h2>
+        <p>At any time, you have the right to request to view the Data pertaining to your Discord account. You may submit a request through the <a href="https://discord.com/channels/990295419005333554/990297017974665246" target="_blank" rel="noopener noreferrer">#❓︱support</a> channel in the <a href="https://discord.com/invite/Cc76tYwXvy">KartoffelChips Development</a> guild. You have the right to request the removal of relevant Data.</p>
+        <h2>Underage Users</h2>
+        <p>The use of the Bot is not permitted for minors under the age of 13, or under the age of legal consent for their country. This is in compliance with the <a href="https://discord.com/terms">Discord Terms of Service</a>. No information will be knowingly stored from an underage user. If it is found out that a user is underage we will take all necessary action to delete the stored data.</p>
+        <h2>Questions</h2>
+        <p>If you have any questions or are concerned about what data might be being stored from your account contact us through the <a href="https://discord.com/channels/990295419005333554/990297017974665246" target="_blank" rel="noopener noreferrer">#❓︱support</a> channel in the <a href="https://discord.com/invite/Cc76tYwXvy">KartoffelChips Development</a> guild. For more information check the <a href="https://discord.com/terms">Discord Terms of Service</a>.</p>
+    </div>
+
+    <%- include("../partials/homeFooter.ejs", {}) %>
+
+    <script src="/assets/js/assets.js"></script>
+</body>
+</html>

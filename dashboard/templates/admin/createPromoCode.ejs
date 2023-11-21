@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Promo Codes - Argus Admin Dashboard</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Wactch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Profile - Argus Dashboard">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Wactch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/dashboard/main.css" rel="stylesheet">
+    <link href="/assets/css/admin/assets.css" rel="stylesheet">
+    <link href="/assets/css/admin/promo.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <%- include("../partials/messageBox.ejs", {}) %>
+
+    <%- include("../partials/adminNav.ejs", { user: user }) %>
+
+    <main>
+        <div class="section">
+            <h2>Create Promo Code</h2>
+
+            <form name="makePromoCodeForm" id="makePromoCodeForm" method="post">
+                <label for="type">Type</label>
+                <select name="type" id="type" form="makePromoCodeForm">
+                    <option value="points">Points</option>
+                    <option value="premium">Premium</option>
+                </select>
+
+                <label for="amount">Amount</label>
+                <input type="number" name="amount" id="amount" form="makePromoCodeForm" value="0">
+
+                <label for="expirydate">Expiring</label>
+                <input type="datetime-local" name="expirydate" id="expirydate" form="makePromoCodeForm">
+
+                <label for="maxuses">Max uses</label>
+                <input type="number" name="maxuses" id="maxuses" value="-1" min="-1" form="makePromoCodeForm">
+
+                <button type="submit" form="makePromoCodeForm">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <%- include("../partials/footer.ejs", {}) %>
+
+    <script src="/assets/js/assets.js"></script>
+</body>
+</html>

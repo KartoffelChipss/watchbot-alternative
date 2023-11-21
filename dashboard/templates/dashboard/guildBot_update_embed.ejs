@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= botMember.user.username %> - Argus Dashboard</title>
+    <meta name="author" content="KartoffelChips">
+    <meta name="description" content="Argus - Wactch Discord bots on your server.">
+    <%- include("../partials/icons.ejs") %>
+
+    <meta property="og:title" content="Argus - Watch your bot">
+    <meta property="og:site_name" content="Argus Dashboard">
+    <meta property="og:url" content="https://argus-bot.com/">
+    <meta property="og:description" content="Argus - Watch Discord bots on your server.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/ogimage.jpg">
+
+    <link href="/assets/css/dashboard/feature.css" rel="stylesheet">
+</head>
+<body>
+    <div class="loader"></div>
+
+    <%- include("../partials/messageBox.ejs", {}) %>
+
+    <%- include("../partials/nav.ejs", { user: user }) %>
+
+        <main>
+            <div class="top">
+                <span class="path">
+                    <a href="/dashboard">Dashboard</a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>">
+                        <%= guild.name %>
+                    </a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>">
+                        <%= botMember.user.username %>
+                    </a>
+                    <span class="arrow">></span>
+                    <a href="/dashboard/<%= guild.id %>/<%= botMember.user.id %>/embed">Embed</a>
+                </span>
+                <h2>Embed Updates</h2>
+            </div>
+
+            <form class="main" method="POST" name="channelForm" id="channelForm">
+                <div class="section">
+                    <h3>
+                        <svg style="margin-right: 5px; height: 30px;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 19L11 5M13 19L17 5M19 9H6.5M17.5 15H5" stroke="var(--blue-1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        Channel
+                    </h3>
+                    <p>Select the channel, where the embed containing the status of <%= botMember.user.username %> should be sent.</p>
+
+                    <select form="channelForm" name="pingRole" id="pingRole" oninput="setEmbedChannel(this, '<%= guild.id %>', '<%= botMember.user.id %>')">
+                        <option value="none" disabled> - - - - - </option>
+                        <option value="none" <% if (botDoc.embedUpdate === "none") {%>selected<%}%>>None</option>
+                        <option value="none" disabled> - - - - - </option>
+                        <% channels.forEach((channel, index) => {%>
+                            <option value="<%= channel.id %>" <% if (botDoc.embedUpdate.split("/")[0] === channel.id) {%>selected<%}%>><%= channel.name %></option>
+                        <%});%>
+                    </select>
+                </div>
+            </form>
+        </main>
+
+        <%- include("../partials/footer.ejs", {}) %>
+
+        <script src="/assets/js/assets.js"></script>
+        <script src="/assets/js/embedUpdate.js"></script>
+</body>
+</html>
